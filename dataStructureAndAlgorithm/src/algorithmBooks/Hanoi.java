@@ -19,7 +19,7 @@ public class Hanoi {
 		
 		System.out.println(
 				"원판["+ n +"]을 "
-				+ x + " 기둥에서 "
+				+ x + " 기둥에서 " 
 				+ y + " 기둥으로 옮김."
 				);
 		

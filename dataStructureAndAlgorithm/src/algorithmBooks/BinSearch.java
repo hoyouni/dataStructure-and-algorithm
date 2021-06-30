@@ -7,7 +7,7 @@ public class BinSearch {
 	public static int binarySearch(int[] a, int firstIdx, int lastIdx, int key) {
 		
 		int middleIdx = (firstIdx + lastIdx) / 2;
-
+		
 		while(firstIdx < lastIdx) {
 			if(a[middleIdx] < key) {
 				firstIdx = middleIdx + 1;
@@ -25,7 +25,7 @@ public class BinSearch {
 	}
 	
 	public static void main(String[] args) {
-		int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+		int[] a = {1, 9, 2, 9, 4, 6, 7, 9};
 		int key = 9;
 		int result = binarySearch(a, 0, a.length - 1, key);
 		System.out.println(result);

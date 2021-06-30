@@ -10,7 +10,7 @@ package algorithmBooks;
 public class Hanoi {
 	public static void move(int n, int x, int y) {
 		if(n > 1)
-			/* 
+			/*  
 			 * 기둥에 원판이 한 개 보다 많으면
 			 * 첫 번째 기둥에서 중간 기둥으로 옮겨야함
 			 * 6 은 기둥 번호(1, 2, 3) 합

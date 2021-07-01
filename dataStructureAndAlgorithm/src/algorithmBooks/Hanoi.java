@@ -29,7 +29,7 @@ public class Hanoi {
 	
 	public static void main(String[] args) {
 		// 원판 갯수
-		int n = 4;
+		int n = 3;
 		
 		// 첫 번째 기둥에서 세 번째 기둥으로 옮김
 		move(n, 1, 3);  

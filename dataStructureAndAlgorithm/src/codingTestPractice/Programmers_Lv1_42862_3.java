@@ -47,7 +47,7 @@ public class Programmers_Lv1_42862_3 {
         			map.put(Integer.toString(i + 2), 1);
         			map.put(Integer.toString(i + 1), --num);
         			continue;
-        		}
+        		} 
         	} else {
         		continue;
         	}

@@ -1,41 +1,48 @@
 package codingTestPractice;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Stack;
 
 public class Programmers_Lv2_12973 {
 	public static int solution(String s) {
-		String[] str = s.split("");
-		List<String> list = new ArrayList<String>();
-		for(String s2 : str) 
-			list.add(s2);
-
-		int len = list.size();
-		System.out.println("len : " + len);
-		
-		for(int i = 1; i <= len; i++) {
-			System.out.println("i : " + i);
-			
-			if(len - i > 1) {
-			if(!list.get(len - i).equals(list.get(len - (i + 1))))
-					continue;
-				else {
-					list.remove(len - i);
-					list.remove(len - (i + 1));
-				}
-			} else 
-				break;
-			System.out.println("list : " + list);
-			
+		String[] arr = s.split("");
+		Stack<String> st = new Stack<String>();
+		for(int i = arr.length - 1; i >= 0; i--) {
+			st.push(arr[i]);
 		}
-
-		System.out.println(list);
-		return len == list.size() ? 0 : 1;
+		System.out.println(st);
+		
+		int cnt = 0;
+		int idx = st.size() - 1;
+		while(idx > 1) {
+			for(int i = idx; i >= 0; i--) {
+				if(st.size() == 0 || idx <= 1) {
+					break;
+				}
+				if(st.get(i).equals(st.get(i - 1))) {
+					st.remove(i);
+					st.remove(i-1);
+					cnt++;
+				}
+				idx = st.size() - 1;
+				System.out.println("st : " + st);
+				System.out.println("idx : " + idx);
+				System.out.println("cnt : " + cnt);
+			}
+			if(cnt == 0)
+				break;
+		}
+		
+		
+		return cnt;
 	}
 
 	public static void main(String[] args) {
-		String s = "aabaab";
+//		String s = "baabaa";
+		String s = "cdcd";
 		System.out.println(solution(s));
 	}
 }
